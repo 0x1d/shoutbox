@@ -1,0 +1,37 @@
+---
+version: "2.0"
+services:
+  shoutbox:
+    image: wirelos/shoutbox
+    expose:
+      - port: 3000
+        as: 80
+        accept:
+          - shoutbox.dcentral.systems
+        to:
+          - global: true
+      - port: 80
+        as: 80
+        to:
+          - global: true
+profiles:
+  compute:
+    shoutbox:
+      resources:
+        cpu:
+          units: 0.5
+        memory:
+          size: 256Mi
+        storage:
+          - size: 1Gi
+  placement:
+    dcloud:
+      pricing:
+        shoutbox:
+          denom: uakt
+          amount: 1000
+deployment:
+  shoutbox:
+    dcloud:
+      profile: shoutbox
+      count: 1

@@ -1,0 +1,49 @@
+body {
+    padding: 16px;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgb(18, 12, 42);
+    color: lightgray;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.message-field {
+    width: 100%;
+    margin-bottom: 8px;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.posts {
+    margin-left: auto;
+    margin-right: auto;
+    align-items: stretch;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.post {
+    box-sizing: border-box;
+    border: 1px solid azure;
+    background-color: rgba(43, 34, 77, 0.4);
+    border-radius: 4px;
+    padding: 8px;
+    margin-bottom: 8px;
+    margin-right: 16px;
+    flex-grow: 1;
+}
+
+button {
+    padding: 4px;
+}
+
+form#message-form {
+    display: none;
+}
+
+button#write {
+    margin-bottom: 16px;
+}
